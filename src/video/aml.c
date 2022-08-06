@@ -36,7 +36,7 @@
 #define EXTERNAL_PTS (1)
 #define SYNC_OUTSIDE (2)
 #define UCODE_IP_ONLY_PARAM 0x08
-#define DECODER_BUFFER_SIZE 512*1024
+#define DECODER_BUFFER_SIZE 1024*1024
 #define MAX_WRITE_ATTEMPTS 3
 #define EAGAIN_SLEEP_TIME 15 * 1000
 
@@ -82,6 +82,7 @@ int aml_setup(int videoFormat, int width, int height, int redrawRate, void* cont
       return -1;
   }
 
+  printf("This codec modified by luizkun\n");
   codecParam.am_sysinfo.width = width;
   codecParam.am_sysinfo.height = height;
   codecParam.am_sysinfo.rate = 96000 / redrawRate;
